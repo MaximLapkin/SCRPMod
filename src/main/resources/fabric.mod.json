@@ -2,34 +2,31 @@
   "schemaVersion": 1,
   "id": "scrpmod",
   "version": "${version}",
-  "name": "SCRPMod",
-  "description": "",
-  "authors": [],
-  "contact": {},
-  "license": "All-Rights-Reserved",
-  "icon": "assets/scrpmod/icon.png",
-  "environment": "client",
+  "name": "SCRP Mod",
+  "description": "SCRP Mod with GUI theme customization",
+  "authors": [
+    "MaximLapkin"
+  ],
+  "contact": {
+    "homepage": "https://github.com/MaximLapkin/SCRPMod",
+    "sources": "https://github.com/MaximLapkin/SCRPMod"
+  },
+  "license": "Other",
+  "environment": "*",
   "entrypoints": {
-    "fabric-datagen": [
-      "net.sleepcraft.scrpmod.client.ScrpmodDataGenerator"
+    "main": [
+      "com.scrp.SCRPMod"
     ],
     "client": [
-      "net.sleepcraft.scrpmod.client.ScrpmodClient"
-    ],
-    "main": [
-      "net.sleepcraft.scrpmod.Scrpmod"
+      "com.scrp.client.SCRPModClient"
     ]
   },
   "mixins": [
-    "scrpmod.mixins.json",
-    {
-      "config": "scrpmod.client.mixins.json",
-      "environment": "client"
-    }
+    "scrpmod.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=0.19.2",
     "fabric-api": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "1.21.1"
   }
 }
