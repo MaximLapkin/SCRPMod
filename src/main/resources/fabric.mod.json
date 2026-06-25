@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "scrpmod",
+  "version": "${version}",
+  "name": "SCRPMod",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/scrpmod/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.sleepcraft.scrpmod.client.ScrpmodDataGenerator"
+    ],
+    "client": [
+      "net.sleepcraft.scrpmod.client.ScrpmodClient"
+    ],
+    "main": [
+      "net.sleepcraft.scrpmod.Scrpmod"
+    ]
+  },
+  "mixins": [
+    "scrpmod.mixins.json",
+    {
+      "config": "scrpmod.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
